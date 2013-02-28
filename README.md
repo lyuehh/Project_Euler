@@ -25,21 +25,25 @@ otherwise, you should download and install them by your own.
 **You must have `ruby` and `rake` installed** if you want run like below.
 
 ## Example:
-1. Show ruby code for problem 1
+1. Show code for problem 1
 ```
 $ type=ruby problem=p1 rake cat
 # or
 $ t=ruby p=p1 rake cat
+# or show all code
+$ t=all p=p1 rake cat
 ```
 
-2. Run ruby code for problem 1
+2. Run example for problem 1
 ```
 $ t=ruby p=p1 rake run
+# or run all example
+$ t=all p=p1 rake run
 ```
 
-3. Run all code for problem 1
+3. Edit code for problem 1
 ```
-$ t=all p=p1 rake run
+$ t=ruby p=p1 rake edit
 ```
 
 # end
