@@ -1,4 +1,2 @@
-(define (f? x) (or (= (% x 3) 0) (= (% x 5) 0)))
-
-(print (filter f? (sequence 1 100)))
+(println (apply + (filter (lambda (x) (or (= (% x 3) 0) (= (% x 5) 0) )) (sequence 1 999))))
 (exit)
