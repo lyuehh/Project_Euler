@@ -1,3 +1,2 @@
-import Data.List (union)
 module Main where
-  problem_1' = sum (union [3,6..999] [5,10..999])
+main = print( sum [x | x <- [1..999], x `mod` 3 == 0 || x `mod` 5 == 0])
