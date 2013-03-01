@@ -23,6 +23,7 @@ function fib2(n) {
   return add;
 }
 
+// 没有lazy特性,取1到40
 function p2() {
   var arr = [];
   for(var i=1;i<40;i++) {

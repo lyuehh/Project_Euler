@@ -12,6 +12,7 @@ fib2 = (n) ->
       second = add
   return add
 
+## 没有lazy特性, 我们取1到40
 ret = [1..40].map((n) ->
   return fib2(n)
 ).filter((n) ->
