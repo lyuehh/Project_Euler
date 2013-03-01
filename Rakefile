@@ -39,6 +39,8 @@ def get_command(cmd)
         system "cd #{i}; cat #{p}.#{ext[i]}"
       when "edit"
         system "cd #{i}; vim #{p}.#{ext[i]}"
+      when "create"
+        system "cd #{i}; touch #{p}.#{ext[i]}"
       end
       puts ""
     end
@@ -67,4 +69,9 @@ end
 desc 'edit'
 task :edit do
   get_command "edit"
+end
+
+desc 'gen files'
+task :create do
+  get_command "create"
 end
