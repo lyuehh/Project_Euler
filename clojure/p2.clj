@@ -1,6 +1,4 @@
-;;(print (reduce + (filter (fn [x] (== (mod x 2))) (filter (fn [x] (< x 100)) (map (fn [x] (* x x)) (range 1000))))))
-;;(print (reduce + (filter (fn [x] (== (mod x 2))) (filter (fn [x] (< x 100)) (map (fn [x] (* x x)) (range 1000))))))
-
+;;lazy..
 (defn lazy-seq-fibo
   ([]
     (concat [0 1] (lazy-seq-fibo 0 1)))
