@@ -1,5 +1,8 @@
 # Project Euler
 Solutions to the <http://projecteuler.net/> in different program languages.  
+With the help of:
+* <http://www.haskell.org/haskellwiki/Euler_problems> for haskell
+* <http://eastsun.iteye.com/blog/203289> for scala
 
 # Program Languages
 * clojure <http://clojure.org/>
@@ -41,7 +44,7 @@ $ t=ruby p=p1 rake run
 $ t=all p=p1 rake run
 ```
 
-3. Edit code for problem 1
+3. Edit code for problem 1 with vim
 ```
 $ t=ruby p=p1 rake edit
 ```
