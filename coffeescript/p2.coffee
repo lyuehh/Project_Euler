@@ -1,6 +1,8 @@
+# 递归版本
 fib = (n) ->
   if n < 2 then n else fib(n-1) + fib(n-2)
 
+# 迭代版本
 fib2 = (n) ->
   for i in [0..n]
     if i is 0
