@@ -13,6 +13,7 @@ fib2_iter(A, B, N) ->
     true -> fib2_iter(A+B, A, N-1)
   end.
 
+%% 应该可以惰性求值,但是不会...
 main(_) ->
   io:format("~p~n",
     [lists:foldl(fun(X, Sum) -> X + Sum end, 0,
