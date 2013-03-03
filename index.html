@@ -1,49 +1,97 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Project Euler : " />
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="description" content="Project Euler : " />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Project Euler</title>
-  </head>
+<title>Project Euler</title>
+</head>
 
-  <body>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
 
-          <h1 id="project_title">Project Euler</h1>
-          <h2 id="project_tagline"></h2>
+    <h1 id="project_title"><a href="index.html">Project Euler</a></h1>
+    <h2 id="project_tagline"></h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+    <section id="downloads">
+      <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
+      <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
+    </section>
+  </header>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2>to be done !!!</h2>
-      </section>
-    </div>
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <h1>Project Euler</h1>
+    <p>Solutions to the <a href="http://projecteuler.net/">http://projecteuler.net/</a> in different program languages.<br>
+    With the help of:</p>
+    <ul>
+      <li><a href="http://www.haskell.org/haskellwiki/Euler_problems">http://www.haskell.org/haskellwiki/Euler_problems</a> for haskell</li>
+      <li><a href="http://eastsun.iteye.com/blog/203289">http://eastsun.iteye.com/blog/203289</a> for scala</li>
+    </ul>
+    <h2><a href="problems/p1.html">Browser all problems</a></h2>
+    <h1>Program Languages</h1>
+    <ul>
+      <li>clojure <a href="http://clojure.org/">http://clojure.org/</a></li>
+      <li>coffeescript <a href="http://jashkenas.github.com/coffee-script/">http://jashkenas.github.com/coffee-script/</a></li>
+      <li>erlang <a href="http://www.erlang.org/">http://www.erlang.org/</a></li>
+      <li>haskell <a href="http://www.haskell.org/haskellwiki/Haskell">http://www.haskell.org/haskellwiki/Haskell</a></li>
+      <li>io <a href="http://iolanguage.org/">http://iolanguage.org/</a></li>
+      <li>javascript <a href="http://www.ecmascript.org/">http://www.ecmascript.org/</a></li>
+      <li>lua <a href="http://www.lua.org/">http://www.lua.org/</a></li>
+      <li>newlisp <a href="http://www.newlisp.org/">http://www.newlisp.org/</a></li>
+      <li>ruby <a href="http://www.ruby-lang.org/en/">http://www.ruby-lang.org/en/</a></li>
+      <li>scala <a href="http://www.scala-lang.org/">http://www.scala-lang.org/</a></li>
+    </ul>
+    <h1>Install</h1>
+    <p>If you are on mac os x and with <code>brew</code> installed, just run:</p>
+    <pre><code>brew install clojure erlang haskell-platform io node lua newlisp ruby scala
+npm install coffee-script -g</code></pre>
+    <p>otherwise, you should download and install them by your own.</p>
+    <h1>Run</h1>
+    <p><strong>You must have <code>ruby</code> and <code>rake</code> installed</strong> if you want run like below.</p>
+    <h2>Example:</h2>
+    <ol>
+      <li><p>Show code for problem 1</p>
+      <pre><code>$ type=ruby problem=p1 rake cat
+# or
+$ t=ruby p=p1 rake cat
+# or show all code
+$ t=all p=p1 rake cat</code></pre>
+      </li>
+      <li><p>Run example for problem 1</p>
+      <pre><code>$ t=ruby p=p1 rake run
+# or run all example
+$ t=all p=p1 rake run</code></pre>
+      </li>
+      <li><p>Edit code for problem 1 with vim</p>
+      <pre><code>$ t=ruby p=p1 rake edit</code></pre>
+      </li>
+    </ol>
+    <h1>end</h1>
+    <p>enjoy coding ..</p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+  </section>
+</div>
 
-    
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
 
-  </body>
+
+
+</body>
 </html>
