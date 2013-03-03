@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8' />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="description" content="Project Euler : " />
+<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+<title>All the problems of Project Euler</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+  <header class="inner">
+    <a id="forkme_banner" href="https://github.com/lyuehh/Project_Euler">View on GitHub</a>
+
+    <h1 id="project_title"><a href="../index.html">Project Euler</a></h1>
+    <h2 id="project_tagline"></h2>
+
+    <section id="downloads">
+      <a class="zip_download_link" href="https://github.com/lyuehh/Project_Euler/zipball/master">Download this project as a .zip file</a>
+      <a class="tar_download_link" href="https://github.com/lyuehh/Project_Euler/tarball/master">Download this project as a tar.gz file</a>
+    </section>
+  </header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+  <section id="main_content" class="inner">
+    <h1>Problem 1</h1>
+    <article>
+      <h2>题目</h2>
+<p>Add all the natural numbers below 1000 that are multiples of 3 or 5.<br>求小于1000的自然数中3或5的倍数之和。  </p>
+<h2>答案</h2>
+<p>233168</p>
+
+
+      <h2>Code</h2>
+        <h3><a href="#clojure">clojure</a></h3>
+        <pre name="clojure" id="clojure" class="prettyprint">
+(println (reduce + (filter 
+  (fn [x] (or (== (mod x 3) 0) (== (mod x 5) 0))) (range 1000))))
+
+        </pre>
+        <h3><a href="#coffeescript">coffeescript</a></h3>
+        <pre name="coffeescript" id="coffeescript" class="prettyprint">
+console.log (x for x in [1...1000] when (x % 3 is 0 or x % 5 is 0)).reduce (i, m) -> i + m
+
+        </pre>
+        <h3><a href="#erlang">erlang</a></h3>
+        <pre name="erlang" id="erlang" class="prettyprint">
+#!/usr/bin/env escript
+
+main(_) ->
+  io:format("~p~n",
+    [lists:foldl(fun(X, Sum) -> X + Sum end, 0,
+        [X || X <- lists:seq(1,999),
+          (X rem 3 == 0) or  ( X rem 5 == 0)])]).
+
+        </pre>
+        <h3><a href="#haskell">haskell</a></h3>
+        <pre name="haskell" id="haskell" class="prettyprint">
+module Main where
+main = print( sum [x | x <- [1..999],
+  x `mod` 3 == 0 || x `mod` 5 == 0])
+
+        </pre>
+        <h3><a href="#io">io</a></h3>
+        <pre name="io" id="io" class="prettyprint">
+Range
+1 to(999) asList select(i, v, v % 3 == 0 or v % 5 == 0) sum println
+
+        </pre>
+        <h3><a href="#javascript">javascript</a></h3>
+        <pre name="javascript" id="javascript" class="prettyprint">
+function q1() {
+  var arr = [];
+  for(var i=1;i<1000;i++) {
+    arr.push(i);
+  }
+
+  var ret = arr.filter(function(item) {
+    return item % 3 === 0 || item % 5 === 0;
+  }).reduce(function(item, memo) {
+    return item + memo;
+  }, 0);
+  console.log(ret);
+}
+q1();
+
+        </pre>
+        <h3><a href="#lua">lua</a></h3>
+        <pre name="lua" id="lua" class="prettyprint">
+_ = require "underscore"
+print(_.reduce(_.select(_.range(0,999):to_array(),
+  function(i) return i%3==0 or i%5==0 end), 0,
+    function(memo, i) return memo +i end))
+
+
+
+        </pre>
+        <h3><a href="#newlisp">newlisp</a></h3>
+        <pre name="newlisp" id="newlisp" class="prettyprint">
+(println (apply + 
+                (filter (lambda (x) 
+                          (or (= (% x 3) 0) (= (% x 5) 0) )) 
+                        (sequence 1 999))))
+(exit)
+
+        </pre>
+        <h3><a href="#ruby">ruby</a></h3>
+        <pre name="ruby" id="ruby" class="prettyprint">
+puts (1...1000).select {|i| i % 3 == 0 || i % 5 == 0}
+  .inject {|s,i| s + i}
+
+        </pre>
+        <h3><a href="#scala">scala</a></h3>
+        <pre name="scala" id="scala" class="prettyprint">
+println(Stream.range(0,1000)
+  .filter{n => n % 3 == 0 || n % 5 == 0}.foldLeft(0){_ + _})
+
+        </pre>
+    </article>
+    <aside>
+      <ul>
+          <li><a href="p1.html">Problem 1</a></li>
+          <li><a href="p2.html">Problem 2</a></li>
+      </ul>
+    </aside>
+    <div class="cb"></div>
+  </section>
+</div>
+
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+  <footer class="inner">
+    <p class="copyright">Project Euler maintained by <a href="https://github.com/lyuehh">lyuehh</a></p>
+    <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+  </footer>
+</div>
+<script type='text/javascript' src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+</html>
