@@ -3,7 +3,6 @@ task :help do
   puts "type=ruby problem=p1 rake run"
   puts "or"
   puts "t=ruby p=p1 rake run"
-
   puts 't=ruby p=p1 rake cat'
 end
 
