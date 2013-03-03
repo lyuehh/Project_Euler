@@ -113,3 +113,13 @@ task :page do
   end
   Dir.chdir('..')
 end
+
+desc 'push gh-pages'
+task :pushpage do
+  Dir.chdir('gh-pages');
+  system 'git add .'
+  system 'git commit -a -m "update gh-pages"'
+  system 'git push origin gh-pages'
+  Dir.chdir('..')
+  puts 'push gh-pages ok...'
+end
