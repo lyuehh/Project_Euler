@@ -16,5 +16,6 @@ end
 # puts (1..Float::INFINITY).lazy.map{|n| fib2(n) }.take_while{|n| n < 4000000}.select{|x| x % 2 == 0}.reduce(:+)
 
 # 结合上面,可以写个一行版本的
-puts (1..Float::INFINITY).lazy.map{|n| (0..n).inject([1,0]) {|(a,b), _| [b, a+b]}[0] }.take_while{|n| n < 4000000}.select{|x| x % 2 == 0}.reduce(:+)
+puts (1..Float::INFINITY).lazy.map{|n| (0..n).inject([1,0]) {|(a,b), _| [b, a+b]}[0] }
+  .take_while{|n| n < 4000000}.select{|x| x % 2 == 0}.reduce(:+)
 

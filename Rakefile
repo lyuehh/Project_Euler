@@ -1,3 +1,5 @@
+require "erubis"
+
 desc 'help'
 task :help do
   puts "type=ruby problem=p1 rake run"
@@ -73,4 +75,41 @@ end
 desc 'gen files'
 task :create do
   get_command "create"
+end
+
+desc 'gen gh-pags'
+task :page do
+  p = ENV['p']
+  raise 'need p, try p=p1 rake page' unless p
+
+  # 1 get all problems
+  ps = Dir.entries('problems')
+    .select{|d| d.include?('md')}
+    .map{|d| d.split('.')[0]}
+
+  # 2 get template
+  input = File.read('template/p.html.erb')
+  eruby = Erubis::Eruby.new(input)
+
+  # 3 get the code
+
+  type = ["clojure", "coffeescript",
+          "erlang",  "haskell", 
+          "io",      "javascript",
+          "lua",     "newlisp",
+          "ruby",    "scala"]
+  ls = []
+  type.each do |t|
+    lang = {:name => t, :code => `cat #{t}/#{p}*`}
+    ls.push(lang)
+  end
+  # 4 get the problem
+  p_content = `cat problems/#{p}.md | marked`
+
+  # 5 write html to file
+  Dir.chdir('gh-pages/problems');
+  File.open("#{p}.html", "w") do |f|
+    f.puts eruby.result(binding())
+  end
+  Dir.chdir('..')
 end

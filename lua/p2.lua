@@ -1,6 +1,6 @@
 _ = require "underscore"
 
--- 非递归版
+-- 递归版本
 function fib(n)
   if n < 2 then
     return n

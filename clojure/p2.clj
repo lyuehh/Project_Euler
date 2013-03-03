@@ -8,5 +8,6 @@
         (cons n (lazy-seq-fibo b n))))))
 
 ;;(print (drop 1 (take 10 (lazy-seq-fibo))))
-(println (reduce + (filter even? (take-while (fn [x] (< x 4000000)) (lazy-seq-fibo)))))
+(println (reduce + (filter even?
+  (take-while (fn [x] (< x 4000000)) (lazy-seq-fibo)))))
 

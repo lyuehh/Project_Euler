@@ -15,7 +15,8 @@ fib2 x = fib2_ret(fib2_iter(0, 1, x))
 myRange start step = start:(myRange (start + step) step)
 
 -- 我的版本...
-main = print(sum [x | x <- takeWhile (< 4000000) (map (\x -> fib2(x)) [x | x <- (myRange 1 1)]), even x])
+main = print(sum [x | x <- takeWhile (< 4000000)
+  (map (\x -> fib2(x)) [x | x <- (myRange 1 1)]), even x])
 
 -- haskell 社区wiki 简洁版本, r即为结果
 r = sum [ x | x <- takeWhile (<= 4000000) fibs, even x]
