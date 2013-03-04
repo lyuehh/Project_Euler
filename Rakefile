@@ -123,3 +123,18 @@ task :pushpage do
   Dir.chdir('..')
   puts 'push gh-pages ok...'
 end
+
+desc 're gen pages'
+task :allpage do
+
+  # 1 get all problems
+  ps = Dir.entries('problems')
+    .select{|d| d.include?('md')}
+    .map{|d| d.split('.')[0]}
+
+  ps.each do |p|
+    system "p=#{p} rake page"
+  end
+  puts "All page generate done..."
+
+end
