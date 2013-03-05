@@ -3,6 +3,7 @@ Solutions to the <http://projecteuler.net/> in different program languages.
 With the help of:
 * <http://www.haskell.org/haskellwiki/Euler_problems> for haskell
 * <http://eastsun.iteye.com/blog/203289> for scala
+* <http://clojure-euler.wikispaces.com/> for clojure
 
 # Program Languages
 * clojure <http://clojure.org/>

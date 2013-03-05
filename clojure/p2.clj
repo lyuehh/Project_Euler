@@ -11,3 +11,8 @@
 (println (reduce + (filter even?
   (take-while (fn [x] (< x 4000000)) (lazy-seq-fibo)))))
 
+;; 另一种简洁的方案
+(defn fibo []
+    (map first (iterate (fn [[a b]] [b (+ a b)]) [0 1])))
+
+;(println (reduce + (for [n (fibo) :when (even? n) :while (> 4000000 n)] n)))
