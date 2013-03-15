@@ -37,14 +37,24 @@
 <p>6857</p>
 
 
-      <h2>Code</h2>
         <h3><a href="#clojure">clojure</a></h3>
         <pre name="clojure" id="clojure" class="prettyprint">
+ ;http://clojure-euler.wikispaces.com/Problem+003
+(defn prime? [n]
+   (zero? (count (filter #(zero? (rem n %)) (range 3 n 2)))))
+
+(defn ret [n]
+  (first
+      (filter #(and (zero? (rem n %))
+                        (prime? %))
+                   (range (int (Math/sqrt n)) 0 -1))))
+
+(println (ret 600851475143))
 
         </pre>
         <h3><a href="#coffeescript">coffeescript</a></h3>
         <pre name="coffeescript" id="coffeescript" class="prettyprint">
-num = 600851475143
+ num = 600851475143
 res = 2
 while res isnt num
   if num % res is 0
@@ -57,15 +67,39 @@ console.log res
         </pre>
         <h3><a href="#erlang">erlang</a></h3>
         <pre name="erlang" id="erlang" class="prettyprint">
+ #!/usr/bin/env escript
+
+% https://github.com/neall/neal-euler/blob/master/003.erl
+% Start by checking the lowest prime: 2
+maxfactor(Target) -> maxfactor(2, Target).
+
+% when the factor we are trying is > the square root of
+% Target, Target is the largest prime factor
+maxfactor(Try, Target) when Try * Try > Target -> Target;
+
+% When we find a factor, factor it out and try it again
+maxfactor(Try, Target) when Target rem Try == 0 ->
+  maxfactor(Try, Target div Try);
+
+% After we factor out any 2s, start us off on odd numbers
+maxfactor(2, Target) -> maxfactor(3, Target);
+
+% Try the next odd number (easier than figuring out primes)
+maxfactor(Try, Target) -> maxfactor(Try + 2, Target).
+
+
+main(_) ->
+  io:format("~p~n", [maxfactor(600851475143)]).
+
 
         </pre>
         <h3><a href="#haskell">haskell</a></h3>
         <pre name="haskell" id="haskell" class="prettyprint">
-
+ 
         </pre>
         <h3><a href="#io">io</a></h3>
         <pre name="io" id="io" class="prettyprint">
-num := 600851475143
+ num := 600851475143
 res := 2
 while(res != num,
   if(num % res == 0,
@@ -79,7 +113,7 @@ res println
         </pre>
         <h3><a href="#javascript">javascript</a></h3>
         <pre name="javascript" id="javascript" class="prettyprint">
-var num = 600851475143;
+ var num = 600851475143;
 var res = 2;
 while(res != num) {
   if(num % res === 0) {
@@ -94,7 +128,7 @@ console.log(res);
         </pre>
         <h3><a href="#lua">lua</a></h3>
         <pre name="lua" id="lua" class="prettyprint">
-local num = 600851475143
+ local num = 600851475143
 local res = 2
 while res ~= num do
   if num % res == 0 then
@@ -109,11 +143,11 @@ print(res)
         </pre>
         <h3><a href="#newlisp">newlisp</a></h3>
         <pre name="newlisp" id="newlisp" class="prettyprint">
-
+ 
         </pre>
         <h3><a href="#ruby">ruby</a></h3>
         <pre name="ruby" id="ruby" class="prettyprint">
-num = 600851475143
+ num = 600851475143
 res = 2
 while res != num
   if num % res == 0
@@ -127,7 +161,7 @@ puts res
         </pre>
         <h3><a href="#scala">scala</a></h3>
         <pre name="scala" id="scala" class="prettyprint">
-var num = 600851475143L
+ var num = 600851475143L
 var res = 2
 while(res != num) {
   if(num % res == 0) {
@@ -148,6 +182,20 @@ println(res)
       </ul>
     </aside>
     <div class="cb"></div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'projecteuler'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </section>
 </div>
 
